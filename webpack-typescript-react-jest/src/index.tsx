@@ -1,8 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import "./index.css";
+import Title from "./Title";
 
 ReactDOM.render(
-  <h1 className="title">HelloWorld</h1>,
-  document.body
+  <Title />,
+  document.body,
+  () => {
+    console.log("end");
+  }
 );
