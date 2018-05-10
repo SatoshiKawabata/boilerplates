@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   output: {
     path: `${__dirname}/dist`,
     filename: 'index.js'
@@ -17,7 +17,16 @@ module.exports = {
           { loader: "style-loader" },
           { loader: "css-loader" }
         ]
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader'
       }
+    ]
+  },
+  resolve: {
+    extensions: [
+      '.ts', '.tsx', ".js", ".json"
     ]
   }
 };
