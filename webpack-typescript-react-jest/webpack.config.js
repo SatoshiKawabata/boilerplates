@@ -8,5 +8,16 @@ module.exports = {
   devServer: {
     contentBase: "./dist",
     port: "8888"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
+      }
+    ]
   }
 };
