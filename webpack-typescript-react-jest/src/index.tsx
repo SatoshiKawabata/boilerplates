@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import Title from "./Title";
+import App from "./App";
 
 ReactDOM.render(
-  <Title />,
-  document.body
+  <App />,
+  document.body.querySelector("#app")
 );

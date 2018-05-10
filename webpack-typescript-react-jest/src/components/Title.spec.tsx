@@ -1,12 +1,14 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import Title from "./Title";
+const container = document.createElement("div");
+document.body.appendChild(container);
 
 describe("Title component test.", () => {
   beforeEach(done => {
     ReactDOM.render(
       <Title />,
-      document.body,
+      container,
       done
     );
   });
