@@ -7,6 +7,7 @@ interface IState {
   todos: {
     text: string;
     done: boolean;
+    id: string;
   }[];
   inputText: string;
 };
@@ -25,10 +26,12 @@ export default class App extends React.Component<null, IState> {
       <div>
         <Title />
         <TodoInput
+          inputText={this.state.inputText}
           onAdd={() => {
             this.state.todos.push({
               text: this.state.inputText,
-              done: false
+              done: false,
+              id: Date.now().toString()
             });
             this.setState({
               inputText: "",
@@ -45,6 +48,7 @@ export default class App extends React.Component<null, IState> {
                 key={i}
                 text={todo.text}
                 done={todo.done}
+                id={todo.id}
                 onCheck={checked => {
                   this.state.todos[i].done = checked;
                   this.setState({

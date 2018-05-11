@@ -1,9 +1,9 @@
 module.exports = {
-  mode: 'development',
-  entry: './src/index.tsx',
+  mode: "development",
+  entry: "./src/index.tsx",
   output: {
     path: `${__dirname}/dist`,
-    filename: 'index.js'
+    filename: "index.js"
   },
   devServer: {
     contentBase: "./dist",
@@ -20,13 +20,13 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        use: 'ts-loader'
+        use: "ts-loader"
       }
     ]
   },
   resolve: {
     extensions: [
-      '.ts', '.tsx', ".js", ".json"
+      ".ts", ".tsx", ".js", ".json"
     ]
   }
 };

@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import Todo from "./Todo";
-import * as ReactTestUtils from 'react-dom/test-utils';
+import * as ReactTestUtils from "react-dom/test-utils";
 const container = document.createElement("div");
 document.body.appendChild(container);
 
@@ -10,6 +10,7 @@ describe("TodoInput component test.", () => {
   beforeAll(done => {
     ReactDOM.render(
       <Todo
+        id={"1234"}
         text="test"
         done={false}
         onCheck={checked => { onCheck(checked); }}
@@ -20,9 +21,9 @@ describe("TodoInput component test.", () => {
   });
 
   it("should render correctly.", () => {
-    const p = document.querySelector("p");
-    expect(p).toBeInstanceOf(HTMLParagraphElement);
-    expect(p.textContent).toBe("test");
+    const label = document.querySelector("label");
+    expect(label).toBeInstanceOf(HTMLLabelElement);
+    expect(label.textContent).toBe("test");
   });
 
   it("should call onCheck handler on click check box", done => {
