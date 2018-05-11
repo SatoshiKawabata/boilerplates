@@ -14,6 +14,7 @@
     "@types/react-dom": "^16.0.5",
     "css-loader": "^0.28.11",
     "jest": "^22.4.3",
+    "jest-css-modules": "^1.1.0",
     "style-loader": "^0.21.0",
     "ts-jest": "^22.4.5",
     "ts-loader": "^4.3.0",
@@ -28,7 +29,8 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.tsx?$": "ts-jest"
+      "^.+\\.tsx?$": "ts-jest",
+      ".css": "<rootDir>/node_modules/jest-css-modules"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
