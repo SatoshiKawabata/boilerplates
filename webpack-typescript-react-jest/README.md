@@ -1,4 +1,7 @@
-# フロントエンド開発環境構築ハンズオン - Webpack & TypeScript & React
+# フロントエンド開発環境構築ハンズオン - Webpack & TypeScript & React & Jest
+
+フロントエンドの開発環境構築ってややこしくてトレンドもすぐに変わってしまうから大変…
+シンプルにWebpackでローカルサーバ立ち上げてブラウザでデバッグできる環境を作っていきましょう。
 
 ## 始める前にnodeのバージョン確認
 `v9.3.0`を使用しますが、webpack4をが動くバージョンだったらどれでもOKです。
@@ -93,6 +96,9 @@ npm i -D webpack-dev-server
 
 `localhost:8888`でページにアクセスできます。この状態で既にソースのウォッチとホットリロードは効きます。
 
+ここまでの成果物はこのリビジョンです。
+[initial build · SatoshiKawabata/boilerplates@6a705f9 · GitHub](https://github.com/SatoshiKawabata/boilerplates/commit/6a705f950ed0e74ab2673d0225c735e4f8d688f6)
+
 ## CSSもバンドルする
 `style-loader`と`css-loader`をインストール
 ```js
@@ -150,6 +156,9 @@ devtoolで確認すると`style-loader`が↓のような感じで`style`タグ�
 </body>
 ```
 
+ここまでの成果物はこのリビジョンです。
+[add style-loader and css-loader · SatoshiKawabata/boilerplates@92c5f3f · GitHub](https://github.com/SatoshiKawabata/boilerplates/commit/92c5f3fb932f68ec8ce835838c71d64e7f6ba322)
+
 ## Reactを導入する
 インストール
 ```sh
@@ -172,6 +181,9 @@ ReactDOM.render(
 );
 ```
 babelを導入していないのでjsx記法はまだ使えません。
+
+ここまでの成果物はこのリビジョンです。
+[add react · SatoshiKawabata/boilerplates@e2dc469 · GitHub](https://github.com/SatoshiKawabata/boilerplates/commit/e2dc469f4f511a6ed118b88bcfdb3a30c1956d32)
 
 ## TypeScriptを導入する
 インストール
@@ -232,6 +244,9 @@ TypeScriptの設定ファイル`tsconfig.json`を追加します。[ここ](http
   }
 }
 ```
+
+ここまでの成果物はこのリビジョンです。
+[add TypeScript · SatoshiKawabata/boilerplates@23dc4bc · GitHub](https://github.com/SatoshiKawabata/boilerplates/commit/23dc4bc337d55261eeaa843770b9dba146580f23)
 
 ## jestを導入する
 インストール
@@ -310,6 +325,9 @@ describe("Title component test.", () => {
 ./node_modules/.bin/jest
 ```
 
+ここまでの成果物はこのリビジョンです。
+[add jest · SatoshiKawabata/boilerplates@ed9a52d · GitHub](https://github.com/SatoshiKawabata/boilerplates/commit/ed9a52dfe29fd659e1a81d18211f5055cbe75d4c)
+
 ## (おまけ)CSS Modulesを導入する
 `webpack.config.js`にmodulesの設定を足す
 ```js
@@ -354,3 +372,6 @@ npm i -D jest-css-modules
 ```
 
 これでひとまずテストが通るようになります。
+
+ここまでの成果物はこのリビジョンです。
+[add jest-css-modules · SatoshiKawabata/boilerplates@0af79b4 · GitHub](https://github.com/SatoshiKawabata/boilerplates/commit/0af79b4d4c32c8992754dad8d57d3c90b2d71898)
