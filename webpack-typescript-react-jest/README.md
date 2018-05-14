@@ -132,7 +132,7 @@ npm i -D style-loader css-loader
   ...
 ```
 
-cssファイルを追加
+`index.css`という名前のcssファイルを追加
 ```css
 .title {
   color: red;
@@ -281,29 +281,30 @@ npm i -D jest @types/jest ts-jest
 ```
 
 コンポーネントのテストを描きたいので先程の`h1`要素を`Title.jsx`として切り出します。
+`Title.tsx`
+```js
+import * as React from "react";
+
+export default () => (
+  <h1 className="title">HelloWorld</h1>
+);
+```
+
+`index.tsx`
 ```js
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import Title from "./Title";
+import "./index.css";
 
-describe("Title component test.", () => {
-  beforeEach(done => {
-    ReactDOM.render(
-      <Title />,
-      document.body,
-      done
-    );
-  });
-
-  it("should render correctly.", () => {
-    const title = document.querySelector("h1");
-    expect(title.textContent).toBe("HelloWorld");
-    expect(title.className).toBe("title");
-  });
-});
+ReactDOM.render(
+  <Title />,
+  document.body
+);
 ```
 
 テストコードはこんな感じでいいと思います。
+`Title.spec.tsx`
 ```js
 import * as React from "react";
 import * as ReactDOM from "react-dom";
@@ -328,9 +329,9 @@ describe("Title component test.", () => {
 
 テスト実行
 たぶん`document.body`に直接renderしてるのでreactのwarningが出ますがとりあえずOKです。
-`--watch`とかつければウォッチしてくれます。
+`--watchAll`とかつければウォッチしてくれます。
 ```sh
-./node_modules/.bin/jest --watch
+./node_modules/.bin/jest --watchAll
 ```
 
 ここまでの成果物はこのリビジョンです。
