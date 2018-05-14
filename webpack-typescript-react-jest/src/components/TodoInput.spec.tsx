@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import TodoInput from "./TodoInput";
-import * as ReactTestUtils from 'react-dom/test-utils';
+import * as ReactTestUtils from "react-dom/test-utils";
 const container = document.createElement("div");
 document.body.appendChild(container);
 
@@ -12,6 +12,7 @@ describe("TodoInput component test.", () => {
   beforeAll(done => {
     ReactDOM.render(
       <TodoInput
+        inputText=""
         onAdd={() => {
           onAdd();
         }}

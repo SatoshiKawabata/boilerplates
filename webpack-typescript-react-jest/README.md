@@ -1,6 +1,7 @@
 # フロントエンド開発環境構築ハンズオン - Webpack & TypeScript & React & Jest
 
 フロントエンドの開発環境構築ってややこしくてトレンドもすぐに変わってしまうから大変…
+
 シンプルにWebpackでローカルサーバ立ち上げてブラウザでデバッグできる環境を作っていきましょう。
 
 ## 始める前にnodeのバージョン確認
@@ -326,9 +327,10 @@ describe("Title component test.", () => {
 ```
 
 テスト実行
-たぶんreactのwarningが出ますがとりあえずOKです。`--watch`とかつければウォッチしてくれます。
+たぶん`document.body`に直接renderしてるのでreactのwarningが出ますがとりあえずOKです。
+`--watch`とかつければウォッチしてくれます。
 ```sh
-./node_modules/.bin/jest
+./node_modules/.bin/jest --watch
 ```
 
 ここまでの成果物はこのリビジョンです。
